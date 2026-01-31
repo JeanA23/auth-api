@@ -3,6 +3,7 @@ package com.authenticationsystem.auth_api.models;
 import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -28,7 +29,12 @@ public class User {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String username;
+	
+	@Column(unique = true, nullable = false)
+	private String email;
+	
 	private String password;
 	
 	@ManyToMany(fetch= FetchType.LAZY)
