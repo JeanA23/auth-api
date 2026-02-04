@@ -6,6 +6,7 @@ import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import com.authenticationsystem.auth_api.security.UserDetailsImpl;
 
@@ -17,16 +18,17 @@ import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 
+@Component
 public class JwtUtils {
 
 	private static final Logger
 
 	logger = LoggerFactory.getLogger(JwtUtils.class);
 
-	@Value(" $ { app.jwtSecret } ")
+	@Value(" $ {spring.jwt.security.key} ")
 	private String jwtSecret;
 
-	@Value("${app.jwtExpirationMs}")
+	//@Value("${app.jwtExpirationMs}")
 	private int jwtExpirationMs;
 
 	public String generateJwtToken(UserDetailsImpl userPrincipal) {
@@ -52,7 +54,14 @@ public class JwtUtils {
 
 	public String getUserNameFromJwtToken(String token) {
 
-		return Jwts.parserBuilder().setSigningKey(key()).build().parseClaimsJws(token).getBody().getSubject();
+		
+		return Jwts.parserBuilder()
+				.setSigningKey(key())//fourniture de la clé secrète
+				.build()
+				.parseClaimsJws(token)
+				.getBody()
+				.getSubject();
+				
 
 	}
 
