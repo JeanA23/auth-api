@@ -46,15 +46,6 @@ public class AuthService {
 
     private final UserRepository userRepository;
 
-	public AuthService(UserRepository userRepository, RoleRepository roleRepository,
-			PasswordEncoder passwordEncoder, AuthenticationManager authenticationManager,JwtUtils jwtUtils) {
-		
-		this.userRepository = userRepository;
-		this.roleRepository = roleRepository;
-		this.passwordEncoder = passwordEncoder;
-		this.authenticationManager = authenticationManager;
-		this.jwtUtils = jwtUtils;
-	}
 
 	//Register Function
 	

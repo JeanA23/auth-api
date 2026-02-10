@@ -1,0 +1,90 @@
+2026-02-10T23:32:41.796+01:00  INFO 29236 --- [auth-api] [restartedMain] c.a.auth_api.AuthApiApplication          : Starting AuthApiApplication using Java 21.0.7 with PID 29236 (C:\Users\JEAN ANANI\eclipse-workspace\auth-api\auth-api1\target\classes started by JEAN ANANI in C:\Users\JEAN ANANI\eclipse-workspace\auth-api\auth-api1)
+2026-02-10T23:32:41.808+01:00  INFO 29236 --- [auth-api] [restartedMain] c.a.auth_api.AuthApiApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-02-10T23:32:41.938+01:00  INFO 29236 --- [auth-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-02-10T23:32:41.940+01:00  INFO 29236 --- [auth-api] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-02-10T23:32:43.706+01:00  INFO 29236 --- [auth-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-10T23:32:43.839+01:00  INFO 29236 --- [auth-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 2 JPA repository interfaces.
+2026-02-10T23:32:44.964+01:00  INFO 29236 --- [auth-api] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-02-10T23:32:45.008+01:00  INFO 29236 --- [auth-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-10T23:32:45.009+01:00  INFO 29236 --- [auth-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-10T23:32:45.119+01:00  INFO 29236 --- [auth-api] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3177 ms
+2026-02-10T23:32:45.533+01:00  INFO 29236 --- [auth-api] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-10T23:32:45.677+01:00  INFO 29236 --- [auth-api] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.1.Final
+2026-02-10T23:32:46.579+01:00  INFO 29236 --- [auth-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-10T23:32:46.648+01:00  INFO 29236 --- [auth-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-10T23:32:46.942+01:00  INFO 29236 --- [auth-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f0a1978
+2026-02-10T23:32:46.947+01:00  INFO 29236 --- [auth-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-10T23:32:47.093+01:00  WARN 29236 --- [auth-api] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-02-10T23:32:47.149+01:00  INFO 29236 --- [auth-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/authenticationapi_db?createDatabaseIfNotExist=true]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: authenticationapi_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-10T23:32:50.011+01:00  INFO 29236 --- [auth-api] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-10T23:32:50.162+01:00 DEBUG 29236 --- [auth-api] [restartedMain] org.hibernate.SQL                        : alter table roles modify column name enum ('ROLE_ADMIN','ROLE_USER')
+2026-02-10T23:32:50.778+01:00  INFO 29236 --- [auth-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-10T23:32:50.930+01:00  INFO 29236 --- [auth-api] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-02-10T23:32:51.139+01:00  INFO 29236 --- [auth-api] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-10T23:32:51.617+01:00  WARN 29236 --- [auth-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-10T23:32:52.817+01:00  INFO 29236 --- [auth-api] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-02-10T23:32:52.827+01:00  INFO 29236 --- [auth-api] [restartedMain] c.a.auth_api.AuthApiApplication          : Started AuthApiApplication in 11.816 seconds (process running for 13.635)
+2026-02-10T23:34:40.778+01:00  INFO 29236 --- [auth-api] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-10T23:34:40.779+01:00  INFO 29236 --- [auth-api] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-02-10T23:34:40.782+01:00  INFO 29236 --- [auth-api] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-02-10T23:34:42.244+01:00 DEBUG 29236 --- [auth-api] [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.id from users u1_0 where u1_0.username=? limit ?
+2026-02-10T23:34:42.280+01:00 DEBUG 29236 --- [auth-api] [http-nio-8080-exec-1] org.hibernate.SQL                        : select u1_0.id from users u1_0 where u1_0.email=? limit ?
+2026-02-10T23:34:42.422+01:00 DEBUG 29236 --- [auth-api] [http-nio-8080-exec-1] org.hibernate.SQL                        : select r1_0.id,r1_0.name from roles r1_0 where r1_0.name=?
+2026-02-10T23:34:42.549+01:00  WARN 29236 --- [auth-api] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.RuntimeException: Error: Role is not found.]
+2026-02-10T23:49:03.006+01:00  INFO 29236 --- [auth-api] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-02-10T23:49:03.015+01:00  INFO 29236 --- [auth-api] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-10T23:49:03.025+01:00  INFO 29236 --- [auth-api] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-02-10T23:49:03.034+01:00  INFO 29236 --- [auth-api] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-10T23:49:03.041+01:00  INFO 29236 --- [auth-api] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-02-10T23:49:03.055+01:00  INFO 29236 --- [auth-api] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-02-10T23:49:03.234+01:00  INFO 29236 --- [auth-api] [restartedMain] c.a.auth_api.AuthApiApplication          : Starting AuthApiApplication using Java 21.0.7 with PID 29236 (C:\Users\JEAN ANANI\eclipse-workspace\auth-api\auth-api1\target\classes started by JEAN ANANI in C:\Users\JEAN ANANI\eclipse-workspace\auth-api\auth-api1)
+2026-02-10T23:49:03.234+01:00  INFO 29236 --- [auth-api] [restartedMain] c.a.auth_api.AuthApiApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-02-10T23:49:03.763+01:00  INFO 29236 --- [auth-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-10T23:49:03.794+01:00  INFO 29236 --- [auth-api] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 2 JPA repository interfaces.
+2026-02-10T23:49:04.069+01:00  INFO 29236 --- [auth-api] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-02-10T23:49:04.072+01:00  INFO 29236 --- [auth-api] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-10T23:49:04.072+01:00  INFO 29236 --- [auth-api] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-02-10T23:49:04.126+01:00  INFO 29236 --- [auth-api] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 887 ms
+2026-02-10T23:49:04.275+01:00  INFO 29236 --- [auth-api] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-02-10T23:49:04.346+01:00  INFO 29236 --- [auth-api] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-10T23:49:04.350+01:00  INFO 29236 --- [auth-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-02-10T23:49:04.356+01:00  INFO 29236 --- [auth-api] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3b32b99c
+2026-02-10T23:49:04.357+01:00  INFO 29236 --- [auth-api] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-02-10T23:49:04.360+01:00  WARN 29236 --- [auth-api] [restartedMain] org.hibernate.orm.core                   : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly.The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2026-02-10T23:49:04.362+01:00  INFO 29236 --- [auth-api] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/authenticationapi_db?createDatabaseIfNotExist=true]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 5.5.5
+	Default catalog/schema: authenticationapi_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-10T23:49:04.493+01:00  INFO 29236 --- [auth-api] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-10T23:49:04.546+01:00 DEBUG 29236 --- [auth-api] [restartedMain] org.hibernate.SQL                        : alter table roles modify column name enum ('ROLE_ADMIN','ROLE_USER')
+2026-02-10T23:49:04.804+01:00  INFO 29236 --- [auth-api] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-10T23:49:04.915+01:00  INFO 29236 --- [auth-api] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-02-10T23:49:05.150+01:00  WARN 29236 --- [auth-api] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-10T23:49:05.841+01:00  INFO 29236 --- [auth-api] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-02-10T23:49:05.860+01:00  INFO 29236 --- [auth-api] [restartedMain] c.a.auth_api.AuthApiApplication          : Started AuthApiApplication in 2.69 seconds (process running for 986.665)
+2026-02-10T23:49:05.865+01:00  INFO 29236 --- [auth-api] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-02-10T23:49:10.159+01:00  INFO 29236 --- [auth-api] [RMI TCP Connection(21)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-02-10T23:49:10.161+01:00  INFO 29236 --- [auth-api] [RMI TCP Connection(21)-127.0.0.1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-10T23:49:10.171+01:00  INFO 29236 --- [auth-api] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-02-10T23:49:10.175+01:00  INFO 29236 --- [auth-api] [RMI TCP Connection(21)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-10T23:49:10.176+01:00  INFO 29236 --- [auth-api] [RMI TCP Connection(21)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-02-10T23:49:10.181+01:00  INFO 29236 --- [auth-api] [RMI TCP Connection(21)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
