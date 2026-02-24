@@ -16,7 +16,7 @@ public class RegisterUserResponse {
 
 	@NotBlank
 	@Size(max = 100)
-	private String name;
+	private String username;
 
 	@NotBlank
 	@Size(max = 100)

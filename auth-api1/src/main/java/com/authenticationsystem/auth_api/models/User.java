@@ -1,8 +1,9 @@
 package com.authenticationsystem.auth_api.models;
 
-import java.security.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -44,7 +45,7 @@ public class User {
 	@JoinTable(name = "user_roles",
 				joinColumns = @JoinColumn(name = "user_id"),
 				inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private Set<Role> roles = new HashSet<>();
+	private List<Role> roles = new ArrayList<>();
 	
 	@Column(name = "is_active")
     private Boolean isActive;

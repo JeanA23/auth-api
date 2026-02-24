@@ -18,15 +18,18 @@ import lombok.RequiredArgsConstructor;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	
-	UserRepository userRepository;
-	private static final Logger logger = LoggerFactory.getLogger(UserDetailsServiceImpl.class);
+	private final UserRepository userRepository;
 
 	@Override
 	@Transactional
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		User user = userRepository.findFirstByEmail(email).orElseThrow(
+		
+		User user = userRepository.findByEmail(email).orElseThrow(
 				() -> new UsernameNotFoundException("Adresse e-mail de l'utilisateur introuvable : " + email));
-		System.out.println(user);
+		
+		//System.out.println(user);
+		//logger.info("User trouvé : {}", user.getEmail());
+		
 		return UserDetailsImpl.build(user);
 	}
 }

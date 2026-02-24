@@ -1,8 +1,7 @@
 package com.authenticationsystem.auth_api.services;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,7 +27,6 @@ import com.authenticationsystem.auth_api.security.UserDetailsImpl;
 import com.authenticationsystem.auth_api.securityJwt.JwtUtils;
 import com.authenticationsystem.auth_api.utils.Response;
 
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
@@ -36,6 +34,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class AuthService {
 
+	
     private final JwtUtils jwtUtils;
 
     private final AuthenticationManager authenticationManager;
@@ -46,8 +45,8 @@ public class AuthService {
 
     private final UserRepository userRepository;
 
-
-	//Register Function
+    
+    //Register Function
 	
 	@Transactional
 	public Response<Object> register(RegisterRequest request) {
@@ -74,11 +73,10 @@ public class AuthService {
 		user.setIsActive(true);
 		
 		//Set default role to ROLE_ADMIN
-		
 		Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
 				.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 		
-		Set<Role> roles = new HashSet<>();
+		List<Role> roles = new ArrayList<>();
 		roles.add(adminRole);
 		user.setRoles(roles);
 		
@@ -87,7 +85,7 @@ public class AuthService {
 		
 		//return response DTO
 		RegisterUserResponse registerUserResponse = RegisterUserResponse.builder()
-				.name(user.getUsername())
+				.username(user.getUsername())
 				.email(user.getEmail())
 				.build();
 		
@@ -100,10 +98,10 @@ public class AuthService {
 	
 	// Login Function
 	@Transactional
-	public Response<Object> login(LoginRequest request, HttpServletResponse response){
+	public Response<Object> login(LoginRequest request){
 		
 		//check if User by Email exist. if not throw error
-		userRepository.findFirstByEmail(request.getEmail())
+		userRepository.findByEmail(request.getEmail())
 		.orElseThrow(() -> new RuntimeException("User not found. Please register first"));
 		
 		Authentication authentication = authenticationManager.authenticate(
@@ -115,7 +113,8 @@ public class AuthService {
 		
 		String jwt = jwtUtils.generateJwtToken(userDetails);
 		
-		List<String> roles = userDetails.getAuthorities().stream()
+		List<String> roles = userDetails.getAuthorities()
+				.stream()
 				.map(GrantedAuthority::getAuthority)
 				.toList();
 		

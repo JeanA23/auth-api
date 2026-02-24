@@ -33,11 +33,11 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<Object> login(@Valid @RequestBody LoginRequest request) {
     	
-        return ResponseEntity.ok(authService.login(request, null));
+        return ResponseEntity.ok(authService.login(request));
     }
 
     // GET USER THAT CURRENTLY LOGIN WITH CERTAIN ROLE
-    @GetMapping("/user")
+    @GetMapping("/users")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Object> getUser() {
     	
