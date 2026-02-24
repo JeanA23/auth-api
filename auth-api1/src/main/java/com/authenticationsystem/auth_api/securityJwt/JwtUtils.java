@@ -25,11 +25,12 @@ public class JwtUtils {
 
 	logger = LoggerFactory.getLogger(JwtUtils.class);
 
-	@Value(" $ {spring.jwt.security.key} ")
+	@Value("${jwt.security.key}")
 	private String jwtSecret;
+	//= "*BB(gDBDvZV]=?{4kZ}>HSq89>!/to.$PmFG5RKg)^,";
 
-	//@Value("${app.jwtExpirationMs}")
-	private int jwtExpirationMs;
+	@Value("${jwt.expiration}")
+	private String jwtExpirationMs;
 
 	public String generateJwtToken(UserDetailsImpl userPrincipal) {
 
@@ -37,11 +38,14 @@ public class JwtUtils {
 	}
 
 	public String generateTokenFromUsername(String username) {
+		
+		int expirationValue = Integer.valueOf(jwtExpirationMs);
+		System.out.println(expirationValue);
 
 		return Jwts.builder()
 				.setSubject((username))
 				.setIssuedAt(new Date())
-				.setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+				.setExpiration(new Date(new Date().getTime() + 4680000))
 				.signWith(key(), SignatureAlgorithm.HS256)
 				.compact();
 	}

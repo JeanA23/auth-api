@@ -2,8 +2,8 @@ package com.authenticationsystem.auth_api.security;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.authenticationsystem.auth_api.models.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

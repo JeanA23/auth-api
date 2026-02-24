@@ -22,7 +22,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 
 
-@Configuration
 @Component
 @RequiredArgsConstructor
 public class AuthTokenFilter extends OncePerRequestFilter {
