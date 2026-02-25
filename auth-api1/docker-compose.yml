@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: Admin1234
+      MYSQL_DATABASE: authdb
+    ports:
+      - "3306:3306"
+    networks:
+      - backend
+
+  auth-api:
+    build: .
+    container_name: auth_api
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    networks:
+      - backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/authenticationapi_db?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Admin1234
+
+networks:
+  backend:
